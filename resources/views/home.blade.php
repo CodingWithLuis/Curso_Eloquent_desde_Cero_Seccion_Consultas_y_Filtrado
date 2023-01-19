@@ -13,7 +13,9 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    {{ __('You are logged in!') }}
+
+                    {{ $product }}
+
                 </div>
             </div>
         </div>
