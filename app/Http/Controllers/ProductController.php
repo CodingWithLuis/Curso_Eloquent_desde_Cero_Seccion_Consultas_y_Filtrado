@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Scopes\ActiveScope;
 use Illuminate\View\View;
 
 class ProductController extends Controller
@@ -10,11 +11,9 @@ class ProductController extends Controller
     public function index(): View
     {
         $products = Product::query()
-            ->when(request('search'), function ($query) {
-                $query->where('code', 'LIKE', '%' . request('search') . '%')
-                    ->orWhere('name', 'LIKE', '%' . request('search') . '%')
-                    ->orWhere('price', 'LIKE', '%' . request('search') . '%');
-            })->get();
+            ->withoutGlobalScope(ActiveScope::class)
+            ->filter()
+            ->get();
 
         return view('products.index', compact('products'));
     }
