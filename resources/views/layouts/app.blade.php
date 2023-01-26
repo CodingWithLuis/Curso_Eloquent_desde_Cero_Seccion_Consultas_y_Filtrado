@@ -36,6 +36,9 @@
                 <a class="navbar-brand" href="{{ route('products.index') }}">
                     Productos
                 </a>
+                <a class="navbar-brand" href="{{ route('posts.index') }}">
+                    Posts
+                </a>
                 @endauth
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
