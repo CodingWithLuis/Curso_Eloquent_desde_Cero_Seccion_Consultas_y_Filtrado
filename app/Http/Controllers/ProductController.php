@@ -10,10 +10,16 @@ class ProductController extends Controller
 {
     public function index(): View
     {
+        // $products = Product::query()
+        //     ->withoutGlobalScope(ActiveScope::class)
+        //     ->filter()
+        //     ->get();
+
+        //Video Paginacion
         $products = Product::query()
-            ->withoutGlobalScope(ActiveScope::class)
             ->filter()
-            ->get();
+            ->cursorPaginate(10)
+            ->withQueryString();
 
         return view('products.index', compact('products'));
     }

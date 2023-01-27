@@ -26,10 +26,10 @@ class Product extends Model
         });
     }
 
-    protected static function booted()
-    {
-        static::addGlobalScope(new ActiveScope);
-    }
+    // protected static function booted()
+    // {
+    //     static::addGlobalScope(new ActiveScope);
+    // }
 
     // public function scopeActive($query, $active)
     // {
