@@ -31,6 +31,28 @@ class ProductController extends Controller
 
     public function aggregates(): View
     {
-        return view('products.aggregates');
+        $total_products = Product::query()->count();
+
+        $max_price_product = Product::query()->max('price');
+
+        $min_price_product = Product::query()->min('price');
+
+        $avg_price_product = Product::query()->avg('price');
+
+        $sum_price_product = Product::query()->sum('price');
+
+        $total_products2 = Product::query()
+            ->groupBy('name')
+            ->selectRaw('count(*) AS total_productos, name')
+            ->pluck('total_productos', 'name');
+
+        return view('products.aggregates', compact(
+            'total_products',
+            'max_price_product',
+            'min_price_product',
+            'avg_price_product',
+            'sum_price_product',
+            'total_products2'
+        ));
     }
 }
