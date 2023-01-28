@@ -16,11 +16,21 @@ class ProductController extends Controller
         //     ->get();
 
         //Video Paginacion
+        // $products = Product::query()
+        //     ->filter()
+        //     ->cursorPaginate(10)
+        //     ->withQueryString();
+
         $products = Product::query()
             ->filter()
-            ->cursorPaginate(10)
+            ->paginate(10)
             ->withQueryString();
 
         return view('products.index', compact('products'));
+    }
+
+    public function aggregates(): View
+    {
+        return view('products.aggregates');
     }
 }

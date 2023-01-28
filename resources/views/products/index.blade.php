@@ -9,6 +9,8 @@
 
                 <div class="card-body">
 
+                    <a href="{{ route('products.aggregates') }}" class="btn btn-primary mt-2 mb-2"> Ejemplo Funciones de Agregado</a>
+
                     <form method="GET">
                         <div class="input-group mb-3">
                             <input type="text" name="search" class="form-control" placeholder="Buscar">
