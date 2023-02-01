@@ -11,9 +11,14 @@
 
                     <form method="GET">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-5">
                                 <div class="mb-3">
-                                    <input name="date" type="text" class="form-control" id="date">
+                                    <input name="date1" type="text" class="form-control" id="date1">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input name="date2" type="text" class="form-control" id="date2">
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -52,7 +57,12 @@
 @endsection
 @push('scripts')
 <script>
-    flatpickr("#date", {
+    flatpickr("#date1", {
+        locale: "es",
+        dateFormat: "d/m/Y",
+    });
+
+    flatpickr("#date2", {
         locale: "es",
         dateFormat: "d/m/Y",
     });
