@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,8 @@ Route::resource('products', ProductController::class)->only('index');
 Route::resource('employees', EmployeeController::class);
 
 Route::resource('posts', PostController::class);
+
+Route::resource('users', UserController::class);
 
 Route::get('/archived_employees', [App\Http\Controllers\ArchivedEmployeesController::class, 'index'])
     ->name('archived_employees.index');

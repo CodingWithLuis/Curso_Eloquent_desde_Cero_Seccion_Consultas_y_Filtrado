@@ -18,7 +18,6 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
@@ -38,6 +37,9 @@
                 </a>
                 <a class="navbar-brand" href="{{ route('posts.index') }}">
                     Posts
+                </a>
+                <a class="navbar-brand" href="{{ route('users.index') }}">
+                    Usuarios
                 </a>
                 @endauth
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -93,6 +95,8 @@
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
     @stack('scripts')
 </body>
 
