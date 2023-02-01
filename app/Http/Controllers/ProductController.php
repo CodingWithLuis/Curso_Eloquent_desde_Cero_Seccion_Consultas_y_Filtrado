@@ -55,4 +55,16 @@ class ProductController extends Controller
             'total_products2'
         ));
     }
+
+    public function having(): View
+    {
+        $products = Product::query()
+            ->select('products.name', 'products.price')
+            ->groupBy('products.name', 'products.price')
+            ->having('price', '>', 500)
+            ->orderBy('products.name', 'ASC')
+            ->get();
+
+        return view('products.having', compact('products'));
+    }
 }

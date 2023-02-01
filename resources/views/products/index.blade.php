@@ -10,6 +10,7 @@
                 <div class="card-body">
 
                     <a href="{{ route('products.aggregates') }}" class="btn btn-primary mt-2 mb-2"> Ejemplo Funciones de Agregado</a>
+                    <a href="{{ route('products.having') }}" class="btn btn-danger mt-2 mb-2"> Ejemplo Having, Group By</a>
 
                     <form method="GET">
                         <div class="input-group mb-3">

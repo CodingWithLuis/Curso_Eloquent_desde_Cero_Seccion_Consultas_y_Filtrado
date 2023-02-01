@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/products/aggregates', [ProductController::class, 'aggregates'])->name('products.aggregates');
+Route::get('/products/having', [ProductController::class, 'having'])->name('products.having');
 Route::resource('products', ProductController::class)->only('index');
 
 Route::resource('employees', EmployeeController::class);
