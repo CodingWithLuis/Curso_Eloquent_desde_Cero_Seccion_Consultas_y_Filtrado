@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
         ]);
 
-        \App\Models\Product::factory(47)->create();
+        // \App\Models\Product::factory(47)->create();
         \App\Models\User::factory(49)->create();
         \App\Models\Category::factory(5)->create();
         \App\Models\Post::factory(20)->create();

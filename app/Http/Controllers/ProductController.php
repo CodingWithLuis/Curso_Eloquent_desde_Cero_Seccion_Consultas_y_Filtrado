@@ -67,4 +67,8 @@ class ProductController extends Controller
 
         return view('products.having', compact('products'));
     }
+
+    public function clone(): void
+    {
+    }
 }

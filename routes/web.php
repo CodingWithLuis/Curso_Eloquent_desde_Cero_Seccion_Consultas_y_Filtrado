@@ -27,6 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/products/aggregates', [ProductController::class, 'aggregates'])->name('products.aggregates');
 Route::get('/products/having', [ProductController::class, 'having'])->name('products.having');
+Route::get('/products/clone', [ProductController::class, 'clone'])->name('products.clone');
 Route::resource('products', ProductController::class)->only('index');
 
 Route::resource('employees', EmployeeController::class);

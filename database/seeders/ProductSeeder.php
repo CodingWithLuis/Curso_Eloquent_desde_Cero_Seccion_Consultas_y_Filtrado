@@ -21,16 +21,16 @@ class ProductSeeder extends Seeder
                 'code' => '0001',
                 'price' => '10',
             ],
-            [
-                'name' => 'Producto 2',
-                'code' => '0002',
-                'price' => '20',
-            ],
-            [
-                'name' => 'Producto 3',
-                'code' => '0003',
-                'price' => '30',
-            ]
+            // [
+            //     'name' => 'Producto 2',
+            //     'code' => '0002',
+            //     'price' => '20',
+            // ],
+            // [
+            //     'name' => 'Producto 3',
+            //     'code' => '0003',
+            //     'price' => '30',
+            // ]
         ];
 
         foreach ($products as $product) {
