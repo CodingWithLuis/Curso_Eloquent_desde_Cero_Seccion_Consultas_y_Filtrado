@@ -68,7 +68,29 @@ class ProductController extends Controller
         return view('products.having', compact('products'));
     }
 
-    public function clone(): void
+    public function clone()
     {
+        //Ejemplo 1
+        // $product = Product::find(1);
+        //
+        // $new_product = $product->replicate();
+        //
+        // $new_product->name = 'Producto 2';
+        //
+        // $new_product->save();
+        //
+        // return $new_product;
+
+        //Ejemplo 2
+        $product = Product::query();
+
+        // 2. filter by date
+        $product->whereDate('created_at', today());
+
+        // 3. verified and not verified users
+        $products_active = $product->clone()->where('is_active', true)->get();
+        $products_inactive = $product->clone()->where('is_active', false)->get();
+
+        return $products_inactive;
     }
 }
